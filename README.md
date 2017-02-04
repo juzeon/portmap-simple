@@ -16,4 +16,5 @@ Usage:
 
 Example:
 ./portmap -m 2 -p1 6666 -h2 0.0.0.0 -p2 7777 #port 6666(input)->7777(output)
+
 ./portmap -m 3 -h1 127.0.0.1 -p1 22 -h2 1.1.1.1 -p2 6666 #port 22(local)->6666(another server which is running portmap)
