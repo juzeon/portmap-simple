@@ -1,6 +1,10 @@
-FROM gcc:4.9
-COPY ./portmap.c /usr/src/myapp/
-WORKDIR /usr/src/myapp/
+FROM ubuntu:16.04
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && \
+    apt-get -y install gcc mono-mcs && \
+    rm -rf /var/lib/apt/lists/*
+COPY ./portmap.c /var/portmap/
+WORKDIR /var/portmap/
 RUN gcc -o portmap portmap.c
 RUN chmod 777 portmap
 EXPOSE 1111 2222
